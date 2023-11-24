@@ -35,8 +35,19 @@ class Api {
     return this._fetch(options, additionalPath);
   }
 
+  delete(meetingId) {
+    const options = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+    };
+    const url = `${meetingId}`;
+    return this._fetch(options, url);
+  }
+
   _fetch(options, path = '') {
-    return fetch(this.apiUrl + path, options).then((resp) => {
+    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+
+    return fetch(this.apiUrl + normalizedPath, options).then((resp) => {
       if (resp.ok) {
         return resp.json();
       }
