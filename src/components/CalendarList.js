@@ -10,30 +10,6 @@ class CalendarList extends React.Component {
   }
   api = new Api();
 
-  async handleDeleteMeeting(meetingId) {
-    const isConfirmed = window.confirm(
-      `Are you sure you want to remove this meeting?`
-    );
-    if (isConfirmed) {
-      try {
-        await this.api.delete(meetingId);
-        const updatedMeetings = this.state.meeting.filter(
-          (meeting) => meeting.id !== meetingId
-        );
-        this.setState(
-          {
-            meeting: updatedMeetings,
-          },
-          () => {
-            window.location.reload();
-          }
-        );
-      } catch (error) {
-        console.error('Error deleting meeting: ', error);
-      }
-    }
-  }
-
   componentDidUpdate(prevProps) {
     if (prevProps.meetings !== this.props.meetings) {
       const updatedMeetings = this.props.meetings.slice();
@@ -115,7 +91,7 @@ class CalendarList extends React.Component {
                 <br />
               </div>
               <button
-                onClick={() => this.handleDeleteMeeting(meeting.id)}
+                onClick={() => this.props.onDeleteMeeting(meeting.id)}
                 className="calendar-list__delete-button"
               >
                 Remove meeting
@@ -178,7 +154,7 @@ class CalendarList extends React.Component {
                     <br />
                   </div>
                   <button
-                    onClick={() => this.handleDeleteMeeting(meeting.id)}
+                    onClick={() => this.props.onDeleteMeeting(meeting.id)}
                     className="calendar-list__delete-button"
                   >
                     Remove meeting

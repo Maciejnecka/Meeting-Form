@@ -1,15 +1,15 @@
 {
   "meetings": [
     {
-      "id": "a34ec962-a5e1-4bf6-9ef6-2c9bacd8ff43",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "0011-11-11",
-      "time": "11:11"
+      "id": "40019c3e-6220-4792-9e51-e50151fd14f3",
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test@test.test",
+      "date": "2024-02-20",
+      "time": "10:00"
     },
     {
-      "id": "3d261039-b1de-4c80-a068-71df4b970712",
+      "id": "3e2ab256-85fc-4376-9293-14f1a3aefa36",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
@@ -17,11 +17,19 @@
       "time": "11:11"
     },
     {
-      "id": "300d2227-bde5-4527-9190-3736aa46850e",
+      "id": "08e54816-1773-47e1-b73f-f43cdda2a09e",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
-      "date": "2222-02-22",
+      "date": "1111-11-11",
+      "time": "11:11"
+    },
+    {
+      "id": "673fd395-640c-4584-ba6f-3917515b65d9",
+      "firstName": "Maciej",
+      "lastName": "Nęcka",
+      "email": "macieknecka@gmail.com",
+      "date": "2222-02-12",
       "time": "22:22"
     }
   ]
