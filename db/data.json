@@ -1,46 +1,6 @@
 {
   "meetings": [
     {
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "jan@kowalski.not",
-      "date": "2022-01-01",
-      "time": "10:00",
-      "id": 1
-    },
-    {
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "jan@kowalski.not",
-      "date": "2022-01-01",
-      "time": "10:00",
-      "id": 2
-    },
-    {
-      "id": "5ba80cd0-a890-472e-ae3e-d3f923ad7118",
-      "firstName": "dsfdf",
-      "lastName": "sdfsfds",
-      "email": "fdsfsfdsf@dsdf",
-      "date": "fdsfsf",
-      "time": "sfdsf"
-    },
-    {
-      "id": "96eddc82-f696-4ea4-ab63-86d57f923170",
-      "firstName": "Maciek",
-      "lastName": "Kowalski",
-      "email": "maciek@kowalski.com",
-      "date": "21-02-10",
-      "time": "20:10"
-    },
-    {
-      "id": "e2d2521b-2250-4e2f-b798-acce94c65d59",
-      "firstName": "ffsadasd",
-      "lastName": "asdad",
-      "email": "adadad@g.com",
-      "date": "sdads",
-      "time": "dasdd"
-    },
-    {
       "id": "de75162d-b105-4d00-889e-d8b20ad8bae3",
       "firstName": "Maciek",
       "lastName": "Maciek",
@@ -55,6 +15,22 @@
       "email": "ssss@com.com",
       "date": "2023-11-23",
       "time": "10:28"
+    },
+    {
+      "id": "5b40b2a6-eb4b-4af9-b3be-659a848f3ad8",
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "email": "jan@kowalski.not",
+      "date": "2022-02-20",
+      "time": "10:00"
+    },
+    {
+      "id": "d99ca0ce-ff80-46b8-81d2-475dff87511f",
+      "firstName": "Maciej",
+      "lastName": "Nęcka",
+      "email": "maciek@gmail.com",
+      "date": "2002-01-21",
+      "time": "10:00"
     }
   ]
 }

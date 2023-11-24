@@ -26,9 +26,13 @@ class Calendar extends React.Component {
   };
   render() {
     return (
-      <div>
-        <CalendarList meetings={this.state.meetings} />
-        <CalendarForm onSubmit={this.handleFormSubmit} />
+      <div className="calendar-container">
+        <div className="calendar-list-container">
+          <CalendarForm onSubmit={this.handleFormSubmit} />
+        </div>
+        <div className="calendar-form-container">
+          <CalendarList meetings={this.state.meetings} />
+        </div>
       </div>
     );
   }
