@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Api from '../providers/calendarProvider';
 
 class CalendarForm extends React.Component {
   constructor(props) {
@@ -11,11 +12,29 @@ class CalendarForm extends React.Component {
       date: '',
       time: '',
       errors: {},
+      firstNameSuggestions: [],
+      lastNameSuggestions: [],
+      emailSuggestions: [],
     };
+    this.api = new Api();
   }
 
-  handleInputChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+  handleInputChange = async (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+
+    if (name === 'firstName' || name === 'lastName' || name === 'email') {
+      try {
+        const suggestions = await this.api.filter(name, value);
+        this.setState({ [`${name}Suggestions`]: suggestions });
+      } catch (error) {
+        console.error('Error fetching suggestions: ', error);
+      }
+    }
+  };
+
+  handleSuggestionClick = (name, suggestion) => {
+    this.setState({ [name]: suggestion, [`${name}Suggestions`]: [] });
   };
 
   handleSubmit = (e) => {
@@ -115,7 +134,22 @@ class CalendarForm extends React.Component {
               name="firstName"
               value={this.state.firstName}
               onChange={this.handleInputChange}
+              list="firstNameSuggestions"
             />
+            <datalist id="firstNameSuggestions">
+              {this.state.firstNameSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.firstName}
+                  onClick={() =>
+                    this.handleSuggestionClick(
+                      'firstName',
+                      suggestion.firstName
+                    )
+                  }
+                />
+              ))}
+            </datalist>
             {this.state.errors.firstName && (
               <p className="form__error">{this.state.errors.firstName}</p>
             )}
@@ -128,7 +162,19 @@ class CalendarForm extends React.Component {
               name="lastName"
               value={this.state.lastName}
               onChange={this.handleInputChange}
+              list="lastNameSuggestions"
             />
+            <datalist id="lastNameSuggestions">
+              {this.state.lastNameSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.lastName}
+                  onClick={() =>
+                    this.handleSuggestionClick('lastName', suggestion.lastName)
+                  }
+                />
+              ))}
+            </datalist>
             {this.state.errors.lastName && (
               <p className="form__error">{this.state.errors.lastName}</p>
             )}
@@ -141,7 +187,19 @@ class CalendarForm extends React.Component {
               name="email"
               value={this.state.email}
               onChange={this.handleInputChange}
+              list="emailSuggestions"
             />
+            <datalist id="emailSuggestions">
+              {this.state.emailSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.email}
+                  onClick={() =>
+                    this.handleSuggestionClick('email', suggestion.email)
+                  }
+                />
+              ))}
+            </datalist>
             {this.state.errors.email && (
               <p className="form__error">{this.state.errors.email}</p>
             )}
