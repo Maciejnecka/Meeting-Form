@@ -1,36 +1,36 @@
 {
   "meetings": [
     {
-      "id": "de75162d-b105-4d00-889e-d8b20ad8bae3",
-      "firstName": "Maciek",
-      "lastName": "Maciek",
-      "email": "maciek@maciek.com",
-      "date": "2222-02-21",
-      "time": "10:22"
-    },
-    {
-      "id": "d83b5e9b-79fa-4e38-9407-f8cf023e27c1",
-      "firstName": "ss",
-      "lastName": "ss",
-      "email": "ssss@com.com",
-      "date": "2023-11-23",
-      "time": "10:28"
-    },
-    {
-      "id": "5b40b2a6-eb4b-4af9-b3be-659a848f3ad8",
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "email": "jan@kowalski.not",
-      "date": "2022-02-20",
+      "id": "f9aeafa8-3365-48ea-bbc9-469146796703",
+      "firstName": "Nadchodzące",
+      "lastName": "Spotkanie",
+      "email": "maciek@m.com",
+      "date": "2023-11-30",
       "time": "10:00"
     },
     {
-      "id": "d99ca0ce-ff80-46b8-81d2-475dff87511f",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "maciek@gmail.com",
-      "date": "2002-01-21",
+      "id": "16f28293-be58-4f75-ba02-f4df114c1f43",
+      "firstName": "Zakończone",
+      "lastName": "Spotkanie",
+      "email": "maciek@m.com",
+      "date": "2023-11-20",
       "time": "10:00"
+    },
+    {
+      "id": "8a6fac6a-f6a3-447d-aa57-9c18cc5b2fc9",
+      "firstName": "Zakończone",
+      "lastName": "Wcześniej",
+      "email": "maciek@m.com",
+      "date": "2023-11-19",
+      "time": "10:00"
+    },
+    {
+      "id": "debe898c-a593-4a8b-888f-175fd48ebd55",
+      "firstName": "Zakończone",
+      "lastName": "Później",
+      "email": "maciek@m.com",
+      "date": "2023-11-20",
+      "time": "11:00"
     }
   ]
 }
