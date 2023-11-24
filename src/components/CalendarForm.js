@@ -54,14 +54,12 @@ class CalendarForm extends React.Component {
         name: 'firstName',
         label: 'First name',
         required: true,
-        pattern: '^[a-zA-Z -]+$',
         minLength: 2,
       },
       {
         name: 'lastName',
         label: 'Last name',
         required: true,
-        pattern: '^[a-zA-Z -]+$',
         minLength: 2,
       },
       {
