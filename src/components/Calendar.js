@@ -1,5 +1,5 @@
 import React from 'react';
-import Api from '../providers/calendarProvider';
+import Api from '../providers/calendarProvider.js';
 import CalendarList from './CalendarList';
 import CalendarForm from './CalendarForm';
 

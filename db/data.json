@@ -1,108 +1,36 @@
 {
   "meetings": [
     {
-      "id": "3e2ab256-85fc-4376-9293-14f1a3aefa36",
+      "id": "4577771f-8e65-4b35-9711-c838ab6ae6d9",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "08e54816-1773-47e1-b73f-f43cdda2a09e",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "423f1c1b-731d-400d-a9ca-308c1aca152b",
-      "firstName": "dddddd",
-      "lastName": "dddd",
-      "email": "test@test.test",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "22a2bcd4-9160-45db-9bae-7bdad4585a36",
-      "firstName": "Gracjan",
-      "lastName": "Gracjan",
-      "email": "test@test.test",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "621f3611-4df5-44c2-a9b0-5902831c32e3",
-      "firstName": "Gracjan",
-      "lastName": "Gracjan",
-      "email": "test@test.test",
-      "date": "2023-11-10",
-      "time": "23:05"
-    },
-    {
-      "id": "8bf1d818-fc78-4257-aac8-c055641d7689",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-11-25",
-      "time": "23:20"
-    },
-    {
-      "id": "e4476461-53c6-4361-8d22-f95ef2665e77",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "5fee7768-1d82-434e-86f0-746c6810bd9f",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-11-24",
-      "time": "23:32"
-    },
-    {
-      "id": "8678c484-7a95-4d13-b3d1-2dcff794fc3b",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-11-26",
+      "date": "2023-11-27",
       "time": "10:00"
     },
     {
-      "id": "6d0572c7-a26f-49f0-a4a8-08e7431d19ec",
+      "id": "fd60e1d5-63bf-4753-9d4d-d041c5747d66",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
       "date": "2023-11-25",
-      "time": "11:00"
-    },
-    {
-      "id": "a54a54c4-ef19-43e0-a30e-09671f77774f",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2024-03-22",
       "time": "10:00"
     },
     {
-      "id": "d01db852-5835-4a21-8d38-59bd22e29635",
+      "id": "ae972bd3-a4e8-4fa1-9cc0-3fe74843d44b",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
-      "date": "2023-11-25",
-      "time": "00:45"
+      "date": "2002-02-22",
+      "time": "10:00"
     },
     {
-      "id": "89dc21fb-feb7-43be-926e-4decce74a7ed",
+      "id": "bb81068a-a499-4f60-b6ef-54be48a1769e",
       "firstName": "Maciej",
       "lastName": "Nęcka",
       "email": "macieknecka@gmail.com",
-      "date": "2023-11-25",
-      "time": "01:45"
+      "date": "1111-11-11",
+      "time": "11:11"
     }
   ]
 }

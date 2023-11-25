@@ -163,4 +163,21 @@ body {
 .calendar-list__delete-button:hover {
   background-color: #cc0000;
 }
+/* Timer styles */
 /* ///////////////////////////////////////////////////////// */
+.calendar-list__item {
+  position: relative;
+}
+
+.calendar-list__countdown {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}

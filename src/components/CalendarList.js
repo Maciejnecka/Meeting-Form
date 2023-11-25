@@ -1,5 +1,7 @@
 import React from 'react';
 import Api from '../providers/calendarProvider';
+import CalendarListItem from './CalendarListItem';
+import { calculateCountdown } from '../helpers/CalendarListCalculateCountdown';
 
 class CalendarList extends React.Component {
   constructor(props) {
@@ -46,32 +48,6 @@ class CalendarList extends React.Component {
     this.setState({ meeting: updatedMeetings });
   }
 
-  renderCountdown(meetingDateTime) {
-    const currentDateTime = new Date();
-    const timeDifference = meetingDateTime - currentDateTime;
-
-    if (timeDifference <= 24 * 60 * 60 * 1000) {
-      const hours = Math.floor(timeDifference / (60 * 60 * 1000));
-      const minutes = Math.floor(
-        (timeDifference % (60 * 60 * 1000)) / (60 * 1000)
-      );
-
-      return (
-        <div className="calendar-list__countdown">
-          Time remaining: {hours} hour{hours !== 1 ? 's' : ''} {minutes} minute
-          {minutes !== 1 ? 's' : ''}
-        </div>
-      );
-    } else {
-      const days = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
-      return (
-        <div className="calendar-list__countdown">
-          More than {days} day{days !== 1 ? 's' : ''}
-        </div>
-      );
-    }
-  }
-
   render() {
     const currentDateTime = new Date();
 
@@ -104,77 +80,20 @@ class CalendarList extends React.Component {
       <div className="calendar-list">
         <h1 className="calendar-list__title">Meeting List</h1>
         <ul className="calendar-list__items">
-          {upcomingMeetings.map((meeting) => {
-            const meetingDateTime = new Date(`${meeting.date} ${meeting.time}`);
-            return (
-              <li key={meeting.id} className="calendar-list__item">
-                <div className="calendar-list__header">
-                  <span className="calendar-list__date">
-                    <span
-                      className="calendar-list__icon"
-                      role="img"
-                      aria-label="Calendar"
-                    >
-                      📅
-                    </span>
-                    {meeting.date}
-                  </span>
-                  <br />
-                  <span className="calendar-list__time">
-                    <span
-                      className="calendar-list__icon"
-                      role="img"
-                      aria-label="Clock"
-                    >
-                      🕒
-                    </span>
-                    {meeting.time}
-                  </span>
-                </div>
-                {this.renderCountdown(meetingDateTime)}
-                <div className="calendar-list__details">
-                  <span className="calendar-list__name">
-                    {' '}
-                    <span
-                      className="calendar-list__icon"
-                      role="img"
-                      aria-label="Person"
-                    >
-                      👤
-                    </span>
-                    {meeting.firstName} {meeting.lastName}
-                  </span>
-                  <br />
-                  <span className="calendar-list__email">
-                    <span
-                      className="calendar-list__icon"
-                      role="img"
-                      aria-label="Email"
-                    >
-                      ✉️
-                    </span>
-                    {meeting.email}
-                  </span>
-                  <br />
-                </div>
-                <button
-                  onClick={() => this.props.onDeleteMeeting(meeting.id)}
-                  className="calendar-list__delete-button"
-                >
-                  Remove meeting
-                </button>
-              </li>
-            );
-          })}
+          {upcomingMeetings.map((meeting) => (
+            <CalendarListItem
+              key={meeting.id}
+              meeting={meeting}
+              onDeleteMeeting={this.props.onDeleteMeeting}
+              renderCountdown={calculateCountdown}
+            />
+          ))}
         </ul>
         {expiredMeetings.length > 0 && (
           <div>
             <h2 className="calendar-list__title">Expired Meetings</h2>
             <ul className="calendar-list__items">
               {expiredMeetings.map((meeting) => {
-                const meetingDateTime = new Date(
-                  `${meeting.date} ${meeting.time}`
-                );
                 return (
                   <li key={meeting.id} className="calendar-list__item expired">
                     <div className="calendar-list__header">
