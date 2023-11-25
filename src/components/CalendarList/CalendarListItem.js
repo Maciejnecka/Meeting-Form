@@ -2,7 +2,7 @@ import React from 'react';
 
 class CalendarListItem extends React.Component {
   render() {
-    const { meeting } = this.props;
+    const { meeting, renderCountdown, onDeleteMeeting } = this.props;
     const meetingDateTime = new Date(`${meeting.date} ${meeting.time}`);
 
     return (
@@ -26,7 +26,7 @@ class CalendarListItem extends React.Component {
             {meeting.time}
           </span>
         </div>
-        {this.props.renderCountdown(meetingDateTime)}
+        {renderCountdown(meetingDateTime)}
         <div className="calendar-list__details">
           <span className="calendar-list__name">
             {' '}
@@ -49,7 +49,7 @@ class CalendarListItem extends React.Component {
           <br />
         </div>
         <button
-          onClick={() => this.props.onDeleteMeeting(this.props.meeting.id)}
+          onClick={() => onDeleteMeeting(this.props.meeting.id)}
           className="calendar-list__delete-button"
         >
           Remove meeting

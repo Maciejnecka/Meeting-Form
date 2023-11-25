@@ -1,7 +1,7 @@
 import React from 'react';
 import Api from '../providers/calendarProvider.js';
-import CalendarList from './CalendarList';
-import CalendarForm from './CalendarForm';
+import CalendarList from './CalendarList/CalendarList.js';
+import CalendarForm from './CalendarForm/CalendarForm.js';
 
 class Calendar extends React.Component {
   constructor(props) {

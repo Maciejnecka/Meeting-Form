@@ -45,13 +45,13 @@ class Api {
   }
 
   _fetch(options, path = '') {
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    const normalizedPath = `/${path}`.startsWith('/') ? `/${path}` : `/${path}`;
 
     return fetch(this.apiUrl + normalizedPath, options).then((resp) => {
       if (resp.ok) {
         return resp.json();
       }
-      throw new Error('Network error!');
+      throw new Error(`Error ${resp.status}: ${resp.statusText}`);
     });
   }
 }

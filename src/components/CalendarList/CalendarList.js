@@ -1,8 +1,14 @@
 import React from 'react';
-import Api from '../providers/calendarProvider';
+import Api from '../../providers/calendarProvider';
 import CalendarListItem from './CalendarListItem';
 import CalendarListItemExpired from './CalendarListItemExpired';
-import { calculateCountdown } from '../helpers/CalendarListCalculateCountdown';
+import { calculateCountdown } from '../../helpers/CalendarListCalculateCountdown';
+import { sortByDateTime, parseDateTime } from '../../helpers/sortByDateTime';
+
+const SECONDS_IN_MINUTE = 60;
+const MILLISECONDS_IN_SECOND = 1000;
+const MILLISECONDS_IN_MINUTE = SECONDS_IN_MINUTE * MILLISECONDS_IN_SECOND;
+const UPDATE_INTERVAL = MILLISECONDS_IN_MINUTE;
 
 class CalendarList extends React.Component {
   constructor(props) {
@@ -18,8 +24,8 @@ class CalendarList extends React.Component {
 
     const currentDateTime = new Date();
     const millisecondsUntilNextMinute =
-      60000 -
-      currentDateTime.getSeconds() * 1000 -
+      MILLISECONDS_IN_MINUTE -
+      currentDateTime.getSeconds() * MILLISECONDS_IN_SECOND -
       currentDateTime.getMilliseconds();
 
     this.timeoutId = setTimeout(() => {
@@ -27,7 +33,7 @@ class CalendarList extends React.Component {
 
       this.intervalId = setInterval(() => {
         this.forceUpdate();
-      }, 60000);
+      }, UPDATE_INTERVAL);
     }, millisecondsUntilNextMinute);
   }
 
@@ -42,21 +48,16 @@ class CalendarList extends React.Component {
     }
   }
 
-  updateMeetings() {
-    const updatedMeetings = Array.isArray(this.props.meetings)
-      ? this.props.meetings.slice()
-      : [];
-    this.setState({ meeting: updatedMeetings });
-  }
+  updateMeetings = () => {
+    this.setState({
+      meeting: Array.isArray(this.props.meetings)
+        ? [...this.props.meetings]
+        : [],
+    });
+  };
 
   render() {
     const currentDateTime = new Date();
-
-    const sortByDateTime = (meetings) =>
-      meetings.sort(
-        (a, b) =>
-          new Date(`${a.date} ${a.time}`) - new Date(`${b.date} ${b.time}`)
-      );
 
     const filterAndSortMeetings = (meetings, condition) =>
       sortByDateTime(meetings.filter(condition));
@@ -65,7 +66,7 @@ class CalendarList extends React.Component {
     const upcomingMeetings = filterAndSortMeetings(
       sortedMeetings,
       (meeting) => {
-        const meetingDateTime = new Date(`${meeting.date} ${meeting.time}`);
+        const meetingDateTime = parseDateTime(meeting.date, meeting.time);
         return meetingDateTime > currentDateTime;
       }
     );
@@ -81,26 +82,30 @@ class CalendarList extends React.Component {
       <div className="calendar-list">
         <h1 className="calendar-list__title">Meeting List</h1>
         <ul className="calendar-list__items">
-          {upcomingMeetings.map((meeting) => (
-            <CalendarListItem
-              key={meeting.id}
-              meeting={meeting}
-              onDeleteMeeting={this.props.onDeleteMeeting}
-              renderCountdown={calculateCountdown}
-            />
-          ))}
+          {upcomingMeetings.map(
+            ({ id, date, time, email, firstName, lastName }) => (
+              <CalendarListItem
+                key={id}
+                meeting={{ id, date, time, firstName, lastName, email }}
+                onDeleteMeeting={this.props.onDeleteMeeting}
+                renderCountdown={calculateCountdown}
+              />
+            )
+          )}
         </ul>
         {expiredMeetings.length > 0 && (
           <div>
             <h2 className="calendar-list__title">Expired Meetings</h2>
             <ul className="calendar-list__items">
-              {expiredMeetings.map((meeting) => (
-                <CalendarListItemExpired
-                  key={meeting.id}
-                  meeting={meeting}
-                  onDeleteMeeting={this.props.onDeleteMeeting}
-                />
-              ))}
+              {expiredMeetings.map(
+                ({ id, date, time, email, firstName, lastName }) => (
+                  <CalendarListItemExpired
+                    key={id}
+                    meeting={{ id, date, time, email, firstName, lastName }}
+                    onDeleteMeeting={this.props.onDeleteMeeting}
+                  />
+                )
+              )}
             </ul>
           </div>
         )}
