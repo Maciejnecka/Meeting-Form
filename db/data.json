@@ -1,68 +1,44 @@
 {
   "meetings": [
     {
-      "id": "bb81068a-a499-4f60-b6ef-54be48a1769e",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
+      "id": "6aa62224-e4e8-418e-bcda-c28f2d35c40b",
+      "firstName": "Meeting",
+      "lastName": "Incoming",
+      "email": "test@test.test",
+      "date": "2024-11-25",
+      "time": "10:00"
     },
     {
-      "id": "c7495d20-e862-4bdd-8482-376f2e508246",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-11-30",
+      "id": "417669a4-9f7b-42ac-8e54-bc290260abdc",
+      "firstName": "Meeting",
+      "lastName": "Expired",
+      "email": "test@test.test",
+      "date": "2023-11-25",
+      "time": "10:00"
+    },
+    {
+      "id": "704f7457-0a41-4cc3-8f2b-a7b7f2ef0153",
+      "firstName": "Meeting",
+      "lastName": "Test",
+      "email": "test@test.test",
+      "date": "2024-06-25",
+      "time": "10:00"
+    },
+    {
+      "id": "21c4666d-a697-47a3-b1b3-8c21a7814fd2",
+      "firstName": "Meeting",
+      "lastName": "Time Test",
+      "email": "test@test.test",
+      "date": "2023-11-27",
+      "time": "23:30"
+    },
+    {
+      "id": "47fadc1b-2332-4256-b249-33458558b9db",
+      "firstName": "Meeting",
+      "lastName": "Expired Test",
+      "email": "test@test.test",
+      "date": "2023-11-20",
       "time": "10:30"
-    },
-    {
-      "id": "8843e639-db78-4b63-ae36-a5610f1cd5a7",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "8c243e27-b1cc-4af5-b504-01065215d8f4",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-11-30",
-      "time": "10:00"
-    },
-    {
-      "id": "2c83c5b0-11db-4cc4-8097-98abb9f22dcb",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "a1db190a-25a4-4aff-992d-5fc6ffe29fbd",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2024-11-22",
-      "time": "10:00"
-    },
-    {
-      "id": "f6a2f017-b11b-4bc9-89f0-71ca686eac20",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-12-25",
-      "time": "20:00"
-    },
-    {
-      "id": "3b08085c-537d-4262-b233-12e1c90de6ee",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2222-02-22",
-      "time": "22:22"
     }
   ]
 }
