@@ -10,7 +10,7 @@ export const calculateCountdown = (meetingDateTime) => {
 
     return (
       <div className="calendar-list__countdown">
-        Time remaining:
+        Time remaining
         <br /> {hours} hour{hours !== 1 ? 's' : ''} {minutes} minute
         {minutes !== 1 ? 's' : ''}
       </div>
@@ -19,7 +19,7 @@ export const calculateCountdown = (meetingDateTime) => {
     const days = Math.floor(timeDifference / (24 * 60 * 60 * 1000));
     return (
       <div className="calendar-list__countdown">
-        Time remaining:
+        Time remaining
         <br /> More than {days} day{days !== 1 ? 's' : ''}
       </div>
     );

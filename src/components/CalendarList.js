@@ -1,6 +1,7 @@
 import React from 'react';
 import Api from '../providers/calendarProvider';
 import CalendarListItem from './CalendarListItem';
+import CalendarListItemExpired from './CalendarListItemExpired';
 import { calculateCountdown } from '../helpers/CalendarListCalculateCountdown';
 
 class CalendarList extends React.Component {
@@ -93,66 +94,13 @@ class CalendarList extends React.Component {
           <div>
             <h2 className="calendar-list__title">Expired Meetings</h2>
             <ul className="calendar-list__items">
-              {expiredMeetings.map((meeting) => {
-                return (
-                  <li key={meeting.id} className="calendar-list__item expired">
-                    <div className="calendar-list__header">
-                      <span className="calendar-list__date">
-                        <span
-                          className="calendar-list__icon"
-                          role="img"
-                          aria-label="Calendar"
-                        >
-                          📅
-                        </span>
-                        {meeting.date}
-                      </span>
-                      <br />
-                      <span className="calendar-list__time">
-                        <span
-                          className="calendar-list__icon"
-                          role="img"
-                          aria-label="Clock"
-                        >
-                          🕒
-                        </span>
-                        {meeting.time}
-                      </span>
-                    </div>
-                    <div className="calendar-list__details">
-                      <span className="calendar-list__name">
-                        {' '}
-                        <span
-                          className="calendar-list__icon"
-                          role="img"
-                          aria-label="Person"
-                        >
-                          👤
-                        </span>
-                        {meeting.firstName} {meeting.lastName}
-                      </span>
-                      <br />
-                      <span className="calendar-list__email">
-                        <span
-                          className="calendar-list__icon"
-                          role="img"
-                          aria-label="Email"
-                        >
-                          ✉️
-                        </span>
-                        {meeting.email}
-                      </span>
-                      <br />
-                    </div>
-                    <button
-                      onClick={() => this.props.onDeleteMeeting(meeting.id)}
-                      className="calendar-list__delete-button"
-                    >
-                      Remove meeting
-                    </button>
-                  </li>
-                );
-              })}
+              {expiredMeetings.map((meeting) => (
+                <CalendarListItemExpired
+                  key={meeting.id}
+                  meeting={meeting}
+                  onDeleteMeeting={this.props.onDeleteMeeting}
+                />
+              ))}
             </ul>
           </div>
         )}
