@@ -8,27 +8,41 @@ class CalendarForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      email: '',
-      date: '',
-      time: '',
+      form: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        date: '',
+        time: '',
+      },
       errors: {},
-      firstNameSuggestions: [],
-      lastNameSuggestions: [],
-      emailSuggestions: [],
+      suggestions: {
+        firstName: [],
+        lastName: [],
+        email: [],
+      },
     };
     this.api = new Api();
   }
 
   handleInputChange = async (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState((prevState) => ({
+      form: {
+        ...prevState.form,
+        [name]: value,
+      },
+    }));
 
     if (name === 'firstName' || name === 'lastName' || name === 'email') {
       try {
         const suggestions = await this.api.filter(name, value);
-        this.setState({ [`${name}Suggestions`]: suggestions });
+        this.setState((prevState) => ({
+          suggestions: {
+            ...prevState.suggestions,
+            [`${name}Suggestions`]: suggestions,
+          },
+        }));
       } catch (error) {
         console.error('Error fetching suggestions: ', error);
       }
@@ -46,21 +60,23 @@ class CalendarForm extends React.Component {
       const id = uuidv4();
       const newMeeting = {
         id,
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        date: this.state.date,
-        time: this.state.time,
+        firstName: this.state.form.firstName,
+        lastName: this.state.form.lastName,
+        email: this.state.form.email,
+        date: this.state.form.date,
+        time: this.state.form.time,
       };
 
       this.props.onSubmit(newMeeting);
 
       this.setState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        date: '',
-        time: '',
+        form: {
+          firstName: '',
+          lastName: '',
+          email: '',
+          date: '',
+          time: '',
+        },
         errors: {},
       });
     } else {
@@ -75,7 +91,13 @@ class CalendarForm extends React.Component {
   render() {
     return (
       <CalendarFormRender
-        {...this.state}
+        form={this.state.form}
+        errors={this.state.errors}
+        suggestions={{
+          firstName: this.state.suggestions.firstName,
+          lastName: this.state.suggestions.lastName,
+          email: this.state.suggestions.email,
+        }}
         handleInputChange={this.handleInputChange}
         handleSuggestionClick={this.handleSuggestionClick}
         handleSubmit={this.handleSubmit}

@@ -1,15 +1,11 @@
-import React from 'react';
-
 const CalendarFormRender = ({
-  firstName,
-  lastName,
-  email,
-  date,
-  time,
+  form: { firstName, lastName, email, date, time },
   errors,
-  firstNameSuggestions,
-  lastNameSuggestions,
-  emailSuggestions,
+  suggestions: {
+    firstName: firstNameSuggestions,
+    lastName: lastNameSuggestions,
+    email: emailSuggestions,
+  },
   handleInputChange,
   handleSuggestionClick,
   handleSubmit,
@@ -29,15 +25,16 @@ const CalendarFormRender = ({
             list="firstNameSuggestions"
           />
           <datalist id="firstNameSuggestions">
-            {firstNameSuggestions.map((suggestion) => (
-              <option
-                key={suggestion.id}
-                value={suggestion.firstName}
-                onClick={() =>
-                  handleSuggestionClick('firstName', suggestion.firstName)
-                }
-              />
-            ))}
+            {firstNameSuggestions &&
+              firstNameSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.firstName}
+                  onClick={() =>
+                    handleSuggestionClick('firstName', suggestion.firstName)
+                  }
+                />
+              ))}
           </datalist>
           {errors.firstName && (
             <p className="form__error">{errors.firstName}</p>
@@ -54,15 +51,16 @@ const CalendarFormRender = ({
             list="lastNameSuggestions"
           />
           <datalist id="lastNameSuggestions">
-            {lastNameSuggestions.map((suggestion) => (
-              <option
-                key={suggestion.id}
-                value={suggestion.lastName}
-                onClick={() =>
-                  this.handleSuggestionClick('lastName', suggestion.lastName)
-                }
-              />
-            ))}
+            {lastNameSuggestions &&
+              lastNameSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.lastName}
+                  onClick={() =>
+                    handleSuggestionClick('lastName', suggestion.lastName)
+                  }
+                />
+              ))}
           </datalist>
           {errors.lastName && <p className="form__error">{errors.lastName}</p>}
         </label>
@@ -77,15 +75,16 @@ const CalendarFormRender = ({
             list="emailSuggestions"
           />
           <datalist id="emailSuggestions">
-            {emailSuggestions.map((suggestion) => (
-              <option
-                key={suggestion.id}
-                value={suggestion.email}
-                onClick={() =>
-                  this.handleSuggestionClick('email', suggestion.email)
-                }
-              />
-            ))}
+            {emailSuggestions &&
+              emailSuggestions.map((suggestion) => (
+                <option
+                  key={suggestion.id}
+                  value={suggestion.email}
+                  onClick={() =>
+                    handleSuggestionClick('email', suggestion.email)
+                  }
+                />
+              ))}
           </datalist>
           {errors.email && <p className="form__error">{errors.email}</p>}
         </label>

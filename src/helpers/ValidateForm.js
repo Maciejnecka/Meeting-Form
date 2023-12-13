@@ -34,7 +34,7 @@ export const validateFormFields = (state) => {
   ];
 
   fields.forEach((field) => {
-    const value = state[field.name];
+    const value = state.form[field.name];
 
     if (field.required && value.trim() === '') {
       errors[field.name] = `${field.label} is required.`;
