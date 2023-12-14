@@ -2,7 +2,7 @@ import React from 'react';
 import Api from '../../providers/calendarProvider';
 import CalendarListItem from './CalendarListItem';
 import CalendarListItemExpired from './CalendarListItemExpired';
-import { calculateCountdown } from '../../helpers/CalendarListCalculateCountdown';
+import { calculateCountdown } from '../../helpers/calendarListCalculateCountdown';
 import { sortByDateTime, parseDateTime } from '../../helpers/sortByDateTime';
 
 const SECONDS_IN_MINUTE = 60;
@@ -11,14 +11,26 @@ const MILLISECONDS_IN_MINUTE = SECONDS_IN_MINUTE * MILLISECONDS_IN_SECOND;
 const UPDATE_INTERVAL = MILLISECONDS_IN_MINUTE;
 
 class CalendarList extends React.Component {
-  state = {
-    meeting: [],
-  };
   api = new Api();
   timeoutId = null;
   intervalId = null;
 
   componentDidMount() {
+    this.startUpdateInterval();
+  }
+
+  componentWillUnmount() {
+    this.clearUpdateInterval();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.meetings !== this.props.meetings) {
+      this.clearUpdateInterval();
+      this.startUpdateInterval();
+    }
+  }
+
+  startUpdateInterval() {
     const currentDateTime = new Date();
     const millisecondsUntilNextMinute =
       MILLISECONDS_IN_MINUTE -
@@ -34,28 +46,22 @@ class CalendarList extends React.Component {
     }, millisecondsUntilNextMinute);
   }
 
-  componentWillUnmount() {
+  clearUpdateInterval() {
     clearTimeout(this.timeoutId);
     clearInterval(this.intervalId);
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.meetings !== this.props.meetings) {
-      this.setState({
-        meeting: Array.isArray(this.props.meetings)
-          ? [...this.props.meetings]
-          : [],
-      });
-    }
   }
 
   render() {
     const currentDateTime = new Date();
 
+    if (!Array.isArray(this.props.meetings)) {
+      return null;
+    }
+
     const filterAndSortMeetings = (meetings, condition) =>
       sortByDateTime(meetings.filter(condition));
 
-    const sortedMeetings = sortByDateTime(this.state.meeting);
+    const sortedMeetings = sortByDateTime(this.props.meetings);
     const upcomingMeetings = filterAndSortMeetings(
       sortedMeetings,
       (meeting) => {
