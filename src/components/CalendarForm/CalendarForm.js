@@ -16,6 +16,7 @@ class CalendarForm extends React.Component {
         time: '',
       },
       errors: {},
+      touched: {},
       suggestions: {
         firstName: [],
         lastName: [],
@@ -24,33 +25,61 @@ class CalendarForm extends React.Component {
     };
     this.api = new Api();
   }
-
   handleInputChange = async (e) => {
     const { name, value } = e.target;
-    this.setState((prevState) => ({
-      form: {
-        ...prevState.form,
-        [name]: value,
-      },
-    }));
 
-    if (name === 'firstName' || name === 'lastName' || name === 'email') {
-      try {
-        const suggestions = await this.api.filter(name, value);
-        this.setState((prevState) => ({
-          suggestions: {
-            ...prevState.suggestions,
-            [`${name}Suggestions`]: suggestions,
-          },
-        }));
-      } catch (error) {
-        console.error('Error fetching suggestions: ', error);
+    this.setState(
+      (prevState) => ({
+        form: {
+          ...prevState.form,
+          [name]: value,
+        },
+        touched: {
+          ...prevState.touched,
+          [name]: true,
+        },
+      }),
+      () => {
+        const errors = this.validateForm();
+        this.setState({ errors });
+        if (!errors[name]) {
+          this.setState((prevState) => ({
+            errors: {
+              ...prevState.errors,
+              [name]: undefined,
+            },
+          }));
+        }
+        if (name === 'firstName' || name === 'lastName' || name === 'email') {
+          this.api
+            .filter(name, value)
+            .then((suggestions) => {
+              this.setState((prevState) => ({
+                suggestions: {
+                  ...prevState.suggestions,
+                  [`${name}Suggestions`]: suggestions,
+                },
+              }));
+            })
+            .catch((error) => {
+              console.error('Error fetching suggestions: ', error);
+            });
+        }
       }
-    }
+    );
   };
 
   handleSuggestionClick = (name, suggestion) => {
-    this.setState({ [name]: suggestion, [`${name}Suggestions`]: [] });
+    this.setState((prevState) => ({
+      form: {
+        ...prevState.form,
+        [name]: suggestion,
+      },
+      suggestions: {
+        ...prevState.suggestions,
+        [`${name}Suggestions`]: [],
+      },
+    }));
   };
 
   handleSubmit = (e) => {
@@ -88,6 +117,30 @@ class CalendarForm extends React.Component {
     return validateFormFields(this.state);
   };
 
+  renderFormFields = () => {
+    const { form, errors, touched } = this.state;
+    const fields = validateFormFields(form);
+
+    return fields.map((field) => {
+      const { name, label } = field;
+      const showError = touched[name] && errors[name];
+
+      return (
+        <div key={name}>
+          <label htmlFor={name}>{label}</label>
+          <input
+            type={field.name === 'email' ? 'email' : 'text'}
+            id={name}
+            name={name}
+            value={form[name]}
+            onChange={this.handleInputChange}
+          />
+          {showError && <span>{errors[name]}</span>}
+        </div>
+      );
+    });
+  };
+
   render() {
     return (
       <CalendarFormRender
@@ -101,6 +154,7 @@ class CalendarForm extends React.Component {
         handleInputChange={this.handleInputChange}
         handleSuggestionClick={this.handleSuggestionClick}
         handleSubmit={this.handleSubmit}
+        renderFormFields={this.renderFormFields}
       />
     );
   }
