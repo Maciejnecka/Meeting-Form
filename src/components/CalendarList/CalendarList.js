@@ -19,8 +19,6 @@ class CalendarList extends React.Component {
   intervalId = null;
 
   componentDidMount() {
-    this.updateMeetings();
-
     const currentDateTime = new Date();
     const millisecondsUntilNextMinute =
       MILLISECONDS_IN_MINUTE -
@@ -43,17 +41,13 @@ class CalendarList extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.meetings !== this.props.meetings) {
-      this.updateMeetings();
+      this.setState({
+        meeting: Array.isArray(this.props.meetings)
+          ? [...this.props.meetings]
+          : [],
+      });
     }
   }
-
-  updateMeetings = () => {
-    this.setState({
-      meeting: Array.isArray(this.props.meetings)
-        ? [...this.props.meetings]
-        : [],
-    });
-  };
 
   render() {
     const currentDateTime = new Date();
