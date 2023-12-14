@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Api from '../../providers/calendarProvider';
 import CalendarFormRender from './CalendarFormRender';
 import { validateFormFields } from '../../helpers/ValidateForm';
+import { renderFormFields } from '../utilis/formUtilis';
 
 class CalendarForm extends React.Component {
   constructor(props) {
@@ -117,30 +118,6 @@ class CalendarForm extends React.Component {
     return validateFormFields(this.state);
   };
 
-  renderFormFields = () => {
-    const { form, errors, touched } = this.state;
-    const fields = validateFormFields(form);
-
-    return fields.map((field) => {
-      const { name, label } = field;
-      const showError = touched[name] && errors[name];
-
-      return (
-        <div key={name}>
-          <label htmlFor={name}>{label}</label>
-          <input
-            type={field.name === 'email' ? 'email' : 'text'}
-            id={name}
-            name={name}
-            value={form[name]}
-            onChange={this.handleInputChange}
-          />
-          {showError && <span>{errors[name]}</span>}
-        </div>
-      );
-    });
-  };
-
   render() {
     return (
       <CalendarFormRender
@@ -154,7 +131,13 @@ class CalendarForm extends React.Component {
         handleInputChange={this.handleInputChange}
         handleSuggestionClick={this.handleSuggestionClick}
         handleSubmit={this.handleSubmit}
-        renderFormFields={this.renderFormFields}
+        renderFormFields={() =>
+          renderFormFields(
+            this.state.form,
+            this.state.errors,
+            this.state.touched
+          )
+        }
       />
     );
   }
