@@ -11,13 +11,12 @@ const MILLISECONDS_IN_MINUTE = SECONDS_IN_MINUTE * MILLISECONDS_IN_SECOND;
 const UPDATE_INTERVAL = MILLISECONDS_IN_MINUTE;
 
 class CalendarList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      meeting: [],
-    };
-    this.api = new Api();
-  }
+  state = {
+    meeting: [],
+  };
+  api = new Api();
+  timeoutId = null;
+  intervalId = null;
 
   componentDidMount() {
     this.updateMeetings();
