@@ -51,7 +51,8 @@ class CalendarForm extends React.Component {
             },
           }));
         }
-        if (name === 'firstName' || name === 'lastName' || name === 'email') {
+        const correctNames = ['firstName', 'lastName', 'email'];
+        if (correctNames.includes(name)) {
           this.api
             .filter(name, value)
             .then((suggestions) => {
