@@ -19,9 +19,9 @@ class CalendarForm extends React.Component {
       errors: {},
       touched: {},
       suggestions: {
-        firstName: [],
-        lastName: [],
-        email: [],
+        firstNameSuggestions: [],
+        lastNameSuggestions: [],
+        emailSuggestions: [],
       },
     };
     this.api = new Api();
@@ -120,25 +120,20 @@ class CalendarForm extends React.Component {
   };
 
   render() {
+    const { form, errors, suggestions, touched } = this.state;
     return (
       <CalendarFormRender
-        form={this.state.form}
-        errors={this.state.errors}
+        form={form}
+        errors={errors}
         suggestions={{
-          firstName: this.state.suggestions.firstName,
-          lastName: this.state.suggestions.lastName,
-          email: this.state.suggestions.email,
+          firstNameSuggestions: suggestions.firstNameSuggestions,
+          lastNameSuggestions: suggestions.lastNameSuggestions,
+          emailSuggestions: suggestions.emailSuggestions,
         }}
         handleInputChange={this.handleInputChange}
         handleSuggestionClick={this.handleSuggestionClick}
         handleSubmit={this.handleSubmit}
-        renderFormFields={() =>
-          renderFormFields(
-            this.state.form,
-            this.state.errors,
-            this.state.touched
-          )
-        }
+        renderFormFields={() => renderFormFields(form, errors, touched)}
       />
     );
   }

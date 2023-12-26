@@ -1,11 +1,7 @@
 const CalendarFormRender = ({
   form: { firstName, lastName, email, date, time },
   errors,
-  suggestions: {
-    firstName: firstNameSuggestions,
-    lastName: lastNameSuggestions,
-    email: emailSuggestions,
-  },
+  suggestions: { firstNameSuggestions, lastNameSuggestions, emailSuggestions },
   handleInputChange,
   handleSuggestionClick,
   handleSubmit,
