@@ -2,7 +2,7 @@ import React from 'react';
 import Api from '../../providers/calendarProvider';
 import CalendarListItem from './CalendarListItem';
 import CalendarListItemExpired from './CalendarListItemExpired';
-import { calculateCountdown } from '../../helpers/calendarListCalculateCountdown';
+import { calculateCountdown } from '../../helpers/CalendarListCalculateCountdown';
 import { sortByDateTime, parseDateTime } from '../../helpers/sortByDateTime';
 
 const SECONDS_IN_MINUTE = 60;
