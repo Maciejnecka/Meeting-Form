@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# React App - Meeting Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a Calendar Management App built using React, designed to help users organize and keep track of their meetings. The app provides a user-friendly interface for adding, viewing, and deleting meetings, along with a countdown feature for upcoming meetings.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+See the live version [Soon... 🌐](#)
 
-### `npm start`
+## Functionalities
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Meeting Creation
+- Users can add new meetings by providing details such as date, time, participant names, and email.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Meeting Deletion
+- Users can remove meetings they no longer need.
 
-### `npm test`
+### Countdown Timer
+- For upcoming meetings, the app displays a countdown timer showing the time remaining until the meeting.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Expired Meetings Section
+- Expired meetings are categorized separately, providing users with a clear distinction between upcoming and past events.
 
-### `npm run build`
+## 💡 Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![JSON Server](https://img.shields.io/badge/JSON%20Server-6f736d?style=for-the-badge&logo=JSON&logoColor=white)
+- ![REST API](https://img.shields.io/badge/REST%20API-4f736d?style=for-the-badge&logoColor=white)
+- ![BEM Methodology](https://img.shields.io/badge/BEM%20Methodology-29BDfD?style=for-the-badge&logo=BEM&logoColor=white)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 💿 Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. First, perform a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) (located at the top right corner of the page). This will create a copy of this repository on your GitHub account.
 
-### `npm run eject`
+2. Clone the repository to your local machine using the [git clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) command.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    cd your-project-directory
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Install dependencies using [npm](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    ```bash
+    npm install
+    ```
 
-## Learn More
+5. Start the app:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm start
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Now you can work on tasks in your own repository and contribute to the project.
 
-### Code Splitting
+## 🙋‍♂️ Feel free to contact me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/maciek-n%C4%99cka/)
