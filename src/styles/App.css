@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #13232f;
+  --accent-color: #cc0000;
+  --grey-white-color: #ccc;
+  --main-white-color: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,13 +46,13 @@ body {
 .form {
   max-width: 400px;
   margin: 0 auto;
-  background-color: #13232f;
+  background-color: var(--secondary-color);
   border-radius: 4px;
 }
 
 .form__title {
   text-align: center;
-  color: #ccc;
+  color: var(--grey-white-color);
   padding-bottom: 20px;
 }
 
@@ -57,22 +65,22 @@ body {
   margin: 10px 0;
   font-size: 20px;
   text-align: center;
-  color: #ccc;
+  color: var(--grey-white-color);
 }
 
 .form__input {
   width: 90%;
   padding: 8px;
   margin-top: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grey-white-color);
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #f0f0f0;
+  background-color: var(--main-white-color);
 }
 
 .form__button {
-  background-color: #3498db;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--grey-white-color);
   padding: 10px 15px;
   margin-top: 10px;
   border: none;
@@ -99,9 +107,9 @@ body {
 .calendar-list {
   max-width: 400px;
   margin: 0 auto;
-  background-color: #13232f;
+  background-color: var(--secondary-color);
   border-radius: 4px;
-  color: #ccc;
+  color: var(--grey-white-color);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -119,7 +127,7 @@ body {
 }
 
 .calendar-list__item {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--grey-white-color);
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -157,7 +165,7 @@ body {
 
 .calendar-list__delete-button {
   background-color: rgba(255, 0, 0, 0.449);
-  color: #eeeded;
+  color: var(--main-white-color);
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0.5px;
@@ -175,8 +183,8 @@ body {
 }
 
 .confirmation-dialog {
-  background-color: #3498db;
-  border: 1px solid #3498db;
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   padding: 10px;
   margin-top: 10px;
   border-radius: 4px;
@@ -204,7 +212,7 @@ body {
 
 .button--confirm {
   background-color: #4caf50;
-  color: #fff;
+  color: var(--main-white-color);
 }
 .button--confirm:hover {
   background-color: #45a045;
@@ -212,7 +220,7 @@ body {
 
 .button--cancel {
   background-color: #d9534f;
-  color: #fff;
+  color: var(--main-white-color);
 }
 
 .button--cancel:hover {
@@ -234,9 +242,19 @@ body {
   margin-top: 10px;
   padding: 5px 0;
   background-color: #3498db;
-  color: white;
+  color: var(--main-white-color);
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
 }
 /* ///////////////////////////////////////////////////////// */
+/* Media query */
+
+@media (max-width: 800px) {
+  .calendar-container {
+    flex-direction: column;
+  }
+  .form__container {
+    margin-bottom: 1rem;
+  }
+}
