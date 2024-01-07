@@ -49,7 +49,12 @@ See the live version [Soon... 🌐](#)
     npm install
     ```
 
-5. Start the app:
+5. JSON Server
+    ```bash
+    json-server --watch ./db/data.json
+    ```
+
+6. Start the app:
 
     ```bash
     npm start
