@@ -1,20 +1,20 @@
 {
   "meetings": [
     {
-      "id": "339fe75e-6cc5-41e8-b3cc-533f1c74cf63",
-      "firstName": "Maciej",
-      "lastName": "Korbiel-Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2222-02-22",
-      "time": "22:22"
-    },
-    {
       "id": "4631362a-d236-4519-90b2-3d87a824331c",
       "firstName": "Katarzyna",
       "lastName": "Korbiel-Nęcka",
       "email": "korbiel.kasia@gmail.com",
       "date": "1111-11-11",
       "time": "11:11"
+    },
+    {
+      "id": "82e2c066-4e9e-49ea-845f-303afd7dced7",
+      "firstName": "Maciej",
+      "lastName": "Nęcka",
+      "email": "macieknecka@gmail.com",
+      "date": "2024-01-12",
+      "time": "10:00"
     }
   ]
 }

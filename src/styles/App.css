@@ -253,8 +253,14 @@ body {
 @media (max-width: 800px) {
   .calendar-container {
     flex-direction: column;
+    min-width: 300px;
   }
   .form__container {
     margin-bottom: 1rem;
+  }
+  .calendar-list__countdown {
+    font-size: 10px;
+    width: 35%;
+    padding: 4px 0;
   }
 }
