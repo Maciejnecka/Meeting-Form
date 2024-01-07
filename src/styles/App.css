@@ -173,6 +173,52 @@ body {
 .calendar-list__delete-button:hover {
   background-color: #cc0000;
 }
+
+.confirmation-dialog {
+  background-color: #3498db;
+  border: 1px solid #3498db;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog {
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+
+.dialog__button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+.button {
+  transition: all 0.5s;
+}
+
+.button--confirm {
+  background-color: #4caf50;
+  color: #fff;
+}
+.button--confirm:hover {
+  background-color: #45a045;
+}
+
+.button--cancel {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.button--cancel:hover {
+  background-color: #c9302c;
+}
+
 /* Timer styles */
 /* ///////////////////////////////////////////////////////// */
 .calendar-list__item {

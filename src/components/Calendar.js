@@ -26,19 +26,16 @@ class Calendar extends React.Component {
   };
 
   handleDeleteMeeting = async (meetingId) => {
-    const isConfirmed = window.confirm(
-      `Are you sure you want to remove this meeting?`
-    );
-    if (isConfirmed) {
-      try {
-        await this.api.delete(meetingId);
-        const updatedMeetings = this.state.meetings.filter(
-          (meeting) => meeting.id !== meetingId
-        );
-        this.setState({ meetings: updatedMeetings });
-      } catch (error) {
-        console.error('Error deleting meeting: ', error);
-      }
+    try {
+      await this.api.delete(meetingId);
+
+      const updatedMeetings = this.state.meetings.filter(
+        (meeting) => meeting.id !== meetingId
+      );
+
+      this.setState({ meetings: updatedMeetings });
+    } catch (error) {
+      console.error('Error deleting meeting:', error);
     }
   };
 

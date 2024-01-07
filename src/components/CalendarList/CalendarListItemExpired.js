@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const CalendarListItemExpired = ({ meeting, onDeleteMeeting }) => {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleConfirmation = (confirm) => {
+    setShowConfirmation(false);
+    if (confirm) {
+      onDeleteMeeting(meeting.id);
+    }
+  };
+
   return (
     <li key={meeting.id} className="calendar-list__item expired">
       <div className="calendar-list__header">
@@ -40,11 +49,30 @@ const CalendarListItemExpired = ({ meeting, onDeleteMeeting }) => {
         <br />
       </div>
       <button
-        onClick={() => onDeleteMeeting(meeting.id)}
+        onClick={() => setShowConfirmation(true)}
         className="calendar-list__delete-button"
       >
         Remove meeting
       </button>
+      {showConfirmation && (
+        <div className="confirmation-dialog dialog">
+          <p className="dialog__text">
+            Are you sure you want to remove this meeting?
+          </p>
+          <button
+            className="dialog__button button button--confirm"
+            onClick={() => handleConfirmation(true)}
+          >
+            Confirm
+          </button>
+          <button
+            className="dialog__button button button--cancel"
+            onClick={() => handleConfirmation(false)}
+          >
+            Cancel
+          </button>
+        </div>
+      )}
     </li>
   );
 };

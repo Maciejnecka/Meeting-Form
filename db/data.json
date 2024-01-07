@@ -1,68 +1,20 @@
 {
   "meetings": [
     {
-      "id": "53626b4c-6e2b-48d6-b906-de6c10d7e3a0",
+      "id": "339fe75e-6cc5-41e8-b3cc-533f1c74cf63",
       "firstName": "Maciej",
-      "lastName": "Nęcka",
+      "lastName": "Korbiel-Nęcka",
       "email": "macieknecka@gmail.com",
       "date": "2222-02-22",
       "time": "22:22"
     },
     {
-      "id": "d9c4e2b0-d6da-40a1-bbfc-e6560813ef3c",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
-    },
-    {
-      "id": "65361344-5bda-4a52-a800-56df1d8cbbaf",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "1122-11-11",
-      "time": "22:22"
-    },
-    {
-      "id": "9a22d5d3-30ca-4617-a277-78bb9c2a7d47",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2023-12-14",
-      "time": "10:22"
-    },
-    {
-      "id": "ea468bbd-0e61-48d9-a45d-c1c3c9bc7e8c",
-      "firstName": "Gracjan",
-      "lastName": "Miernicki",
-      "email": "gracjan.miernicki@gmail.com",
-      "date": "2023-02-21",
-      "time": "20:00"
-    },
-    {
-      "id": "5203ccc9-2cd5-4de2-836f-b26355e0deae",
-      "firstName": "Andrzej",
-      "lastName": "Kowalski",
-      "email": "Andrzej.Kowalski@gmail.com",
-      "date": "2023-12-28",
-      "time": "10:00"
-    },
-    {
-      "id": "b24914f8-eb7d-41f0-aeec-d3c3eddd2098",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2024-01-05",
-      "time": "03:33"
-    },
-    {
-      "id": "8d8ef82b-5539-4fa8-b3cb-495f0e9d81c3",
+      "id": "4631362a-d236-4519-90b2-3d87a824331c",
       "firstName": "Katarzyna",
       "lastName": "Korbiel-Nęcka",
       "email": "korbiel.kasia@gmail.com",
-      "date": "2024-01-12",
-      "time": "12:00"
+      "date": "1111-11-11",
+      "time": "11:11"
     }
   ]
 }

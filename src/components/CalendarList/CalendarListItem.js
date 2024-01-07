@@ -1,9 +1,20 @@
 import React from 'react';
 
 class CalendarListItem extends React.Component {
+  state = {
+    showConfirmation: false,
+  };
+
   render() {
     const { meeting, renderCountdown, onDeleteMeeting } = this.props;
     const meetingDateTime = new Date(`${meeting.date} ${meeting.time}`);
+
+    const handleConfirmation = (confirm) => {
+      this.setState({ showConfirmation: false });
+      if (confirm) {
+        onDeleteMeeting(meeting.id);
+      }
+    };
 
     return (
       <li key={meeting.id} className="calendar-list__item">
@@ -49,11 +60,30 @@ class CalendarListItem extends React.Component {
           <br />
         </div>
         <button
-          onClick={() => onDeleteMeeting(this.props.meeting.id)}
+          onClick={() => this.setState({ showConfirmation: true })}
           className="calendar-list__delete-button"
         >
           Remove meeting
         </button>
+        {this.state.showConfirmation && (
+          <div className="confirmation-dialog dialog">
+            <p className="dialog__text">
+              Are you sure you want to remove this meeting?
+            </p>
+            <button
+              className="dialog__button button button--confirm"
+              onClick={() => handleConfirmation(true)}
+            >
+              Confirm
+            </button>
+            <button
+              className="dialog__button button button--cancel"
+              onClick={() => handleConfirmation(false)}
+            >
+              Cancel
+            </button>
+          </div>
+        )}
       </li>
     );
   }
