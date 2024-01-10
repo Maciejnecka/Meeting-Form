@@ -24,6 +24,9 @@ See the live version
 ### Expired Meetings Section
 - Expired meetings are categorized separately, providing users with a clear distinction between upcoming and past events.
 
+### Real-time Field Validation
+- The meeting form includes dynamic field validation, ensuring that users receive real-time feedback as they fill out the form. This helps prevent common errors and ensures accurate submission of meeting details.
+
 ## 💡 Technologies
 
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
