@@ -55,7 +55,7 @@ See the live version
 
 5. JSON Server
     ```bash
-    json-server --watch ./db/data.json
+    json-server --watch ./db/data.json --port 3005
     ```
 
 6. Start the app:
