@@ -1,19 +1,27 @@
 {
   "meetings": [
     {
-      "id": "4631362a-d236-4519-90b2-3d87a824331c",
-      "firstName": "Katarzyna",
-      "lastName": "Korbiel-Nęcka",
-      "email": "korbiel.kasia@gmail.com",
-      "date": "1111-11-11",
-      "time": "11:11"
+      "id": "8e5d6041-5ac9-45e0-ab7b-ebe82eade047",
+      "firstName": "Adam",
+      "lastName": "Kowalski",
+      "email": "adam.kowalski@gmail.com",
+      "date": "2024-01-21",
+      "time": "10:30"
     },
     {
-      "id": "82e2c066-4e9e-49ea-845f-303afd7dced7",
-      "firstName": "Maciej",
-      "lastName": "Nęcka",
-      "email": "macieknecka@gmail.com",
-      "date": "2024-01-12",
+      "id": "c99b2be8-a20b-457a-966e-e8346e00847e",
+      "firstName": "Adam",
+      "lastName": "Kowalski",
+      "email": "ada.kowalski@gmail.com",
+      "date": "2024-01-01",
+      "time": "10:00"
+    },
+    {
+      "id": "21131db3-6aed-42e8-8590-06d6ba7a3bec",
+      "firstName": "Adam",
+      "lastName": "Kowalski",
+      "email": "adam.kowalski@gmail.com",
+      "date": "2024-01-11",
       "time": "10:00"
     }
   ]
