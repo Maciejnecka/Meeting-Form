@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/Maciejnecka/Meeting-Form",
+  "homepage": "https://maciejnecka.github.io/Meeting-Form",
   "name": "task-react-composition",
   "version": "0.1.0",
   "private": true,
@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
   }
 }
