@@ -1,6 +1,7 @@
 class Api {
   constructor() {
-    this.apiUrl = 'http://localhost:3005/meetings';
+    this.apiUrl =
+      'https://my-json-server.typicode.com/Maciejnecka/JsonDB/meetings';
   }
 
   load() {
