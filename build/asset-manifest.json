@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Maciejnecka/Meeting-Form/static/css/main.6f0a78a6.css",
+    "main.js": "/Maciejnecka/Meeting-Form/static/js/main.dc003702.js",
+    "static/js/787.af27934e.chunk.js": "/Maciejnecka/Meeting-Form/static/js/787.af27934e.chunk.js",
+    "index.html": "/Maciejnecka/Meeting-Form/index.html",
+    "main.6f0a78a6.css.map": "/Maciejnecka/Meeting-Form/static/css/main.6f0a78a6.css.map",
+    "main.dc003702.js.map": "/Maciejnecka/Meeting-Form/static/js/main.dc003702.js.map",
+    "787.af27934e.chunk.js.map": "/Maciejnecka/Meeting-Form/static/js/787.af27934e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f0a78a6.css",
+    "static/js/main.dc003702.js"
+  ]
+}
