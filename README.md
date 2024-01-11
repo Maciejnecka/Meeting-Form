@@ -1,10 +1,14 @@
 # React App - Meeting Form
 
-This project is a Calendar Management App built using React, designed to help users organize and keep track of their meetings. The app provides a user-friendly interface for adding, viewing, and deleting meetings, along with a countdown feature for upcoming meetings.
-
+This project is a meeting management app built using React, designed to help users organize and keep track of their meetings. The app provides a user-friendly interface for adding, viewing, and deleting meetings, along with a countdown feature for upcoming meetings.
 ---
+See the live version
+[Soon... 🌐](#)
 
-See the live version [Soon... 🌐](#)
+<div align="center">
+  <img src="./assets/Meeting-form.png" alt="Meeting form Screenshot">
+</div>
+
 
 ## Functionalities
 
@@ -19,6 +23,9 @@ See the live version [Soon... 🌐](#)
 
 ### Expired Meetings Section
 - Expired meetings are categorized separately, providing users with a clear distinction between upcoming and past events.
+
+### Real-time Field Validation
+- The meeting form includes dynamic field validation, ensuring that users receive real-time feedback as they fill out the form. This helps prevent common errors and ensures accurate submission of meeting details.
 
 ## 💡 Technologies
 
@@ -51,7 +58,7 @@ See the live version [Soon... 🌐](#)
 
 5. JSON Server
     ```bash
-    json-server --watch ./db/data.json
+    json-server --watch ./db/data.json --port 3005
     ```
 
 6. Start the app:
