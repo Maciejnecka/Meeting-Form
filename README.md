@@ -1,9 +1,11 @@
 # React App - Meeting Form
 
-This project is a meeting management app built using React, designed to help users organize and keep track of their meetings. The app provides a user-friendly interface for adding, viewing, and deleting meetings, along with a countdown feature for upcoming meetings.
+An application built using React that serves the purpose of
+managing meetings. It assists users in organizing and tracking their
+meetings.
 ---
 See the live version
-[Soon... 🌐](#)
+[Live Demo - Meeting form 🌐](https://maciejnecka.github.io/Meeting-Form/)
 
 <div align="center">
   <img src="./assets/Meeting-form.png" alt="Meeting form Screenshot">
