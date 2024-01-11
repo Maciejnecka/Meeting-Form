@@ -4,8 +4,7 @@ An application built using React that serves the purpose of
 managing meetings. It assists users in organizing and tracking their
 meetings.
 ---
-See the live version
-[Live Demo - Meeting form 🌐](https://maciejnecka.github.io/Meeting-Form/)
+See the live version: [Live Demo - Meeting form](https://maciejnecka.github.io/Meeting-Form/)🌐
 
 <div align="center">
   <img src="./assets/Meeting-form.png" alt="Meeting form Screenshot">
